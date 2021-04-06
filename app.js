@@ -33,7 +33,7 @@ app.use('/licenses', express.static(path.join(__dirname, 'licenses')));
 app.use('/api/greeting', (request, response) => {
   const name = request.query ? request.query.name : undefined;
   
-  console.log(JSON.stringify(request.headers));
+  console.error(JSON.stringify(request.headers));
 
   if (request.headers['x-requested-with']){
     response.setHeader('x-requested-with', request.headers['x-requested-with']);  
